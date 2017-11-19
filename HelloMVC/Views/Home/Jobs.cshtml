@@ -1,0 +1,58 @@
+﻿@using HelloMVC.Models;
+@model JobsViewModel
+
+@{
+    ViewBag.Title = "Jobs";
+}
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+
+<p>See available jobs, apply until @Model.ApplyEndDate.</p>
+
+<h4>Engineering jobs</h4>
+
+@if (Model.EngineeringJobs != null)
+{
+    <ul>
+        @foreach (var job in Model.EngineeringJobs)
+        {
+            <li>@job.Title: @job.Description</li>
+        }
+    </ul>
+}
+else
+{
+    <p>No engineering jobs</p>
+}
+
+<h4>Management jobs</h4>
+
+@if (Model.ManagementJobs != null)
+{
+    <ul>
+        @foreach (var job in Model.ManagementJobs)
+        {
+            <li>@job.Title: @job.Description</li>
+        }
+    </ul>
+}
+else
+{
+    <p>No management jobs</p>
+}
+
+<h4>Internships</h4>
+
+@if (Model.Internships != null)
+{
+    <ul>
+        @foreach (var job in Model.Internships)
+        {
+            <li>@job.Title: @job.Description</li>
+        }
+    </ul>
+}
+else
+{
+    <p>No internships</p>
+}
